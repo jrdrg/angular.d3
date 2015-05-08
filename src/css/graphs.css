@@ -1,0 +1,12 @@
+.chart-container {
+	border: 1px solid gray;
+}
+
+.vertical-bar rect {
+	fill: blue;
+}
+.vertical-bar text {
+	fill: white;
+	font: 10px monospace;
+	text-anchor: end;
+}
