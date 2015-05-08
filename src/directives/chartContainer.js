@@ -9,8 +9,7 @@
 	 */
 	function ChartContainerController($scope, $element, $attrs) {
 
-		var el = $element[0],
-			data = $scope.data;
+		var el = $element[0];
 
 		var svg = d3.select(el)
 			.append('svg')
@@ -21,7 +20,7 @@
 		
 		this.getChart = function() { return chart; };
 		this.getContainer = function() { return svg; };
-		this.getData = function() { return data; };
+		this.getData = function() { return $scope.data; };
 		this.getHeight = function() { return el.offsetHeight; };
 		this.getWidth = function() { return el.offsetWidth; };
 	}

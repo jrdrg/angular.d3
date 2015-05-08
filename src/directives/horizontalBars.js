@@ -14,6 +14,8 @@
 				width = args.width || 1;
 
 
+			chart.selectAll('g').remove();
+
 			var barHeight = 20;
 
 			var xscale = d3.scale.linear()
@@ -30,18 +32,12 @@
 				.attr('class', 'horizontal-bar')
 				.attr('transform', function(val, idx) { return 'translate(0, ' + idx * barHeight + ')'; });
 
-			bar.transition();
-
-			var my = d3.max(data);
-			// var y1 = function(d) { return height - (d.y + d.y0) * height / my; };
-			var y1 = function(val, idx) { return val; };
-
 			bar.append('rect')
 				.attr('width', xscale)
 				.attr('height', barHeight - 1)
 				.attr('width', 0)
 			.transition()
-				.delay(function(val, idx) { return idx * 10; })
+				.delay(function(val, idx) { return idx * 20; })
 				.attr('width', function(val, idx) { return xscale(val); });
 
 			bar.append('text')
@@ -74,9 +70,22 @@
 
 					onDataChanged(chart, args);
 					console.log('refresh data, horizontal bars');
-				});
+				}, true);
 			}
 		};
+
+
+		function getXAccessor() {
+			return function(x) {
+
+			};
+		}
+
+		function getYAccessor() {
+			return function(y) {
+
+			};
+		}
 	}
 	
 	angular.module('angular.d3')

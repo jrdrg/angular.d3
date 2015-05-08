@@ -12,7 +12,12 @@
 		<script src='build/application.js'></script>
 	</head>
 	<body ng-controller='MainAppController as vm'>
-		{{vm.data}}
+		<section>
+			<button ng-click='vm.refreshData()'>Refresh</button>
+			
+			{{vm.data}}
+		</section>
+		
 		<div chart-container data='vm.data'>
 			<vertical-bars></vertical-bars>
 			<horizontal-bars></horizontal-bars>
