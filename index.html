@@ -2,6 +2,8 @@
 	<head>
 		<title>Angular D3 directives</title>
 		
+		<link rel='stylesheet' href='build/styles.css' />
+
 		<script src='build/vendor/angular.min.js'></script>
 		<script src='build/vendor/angular-ui-router.min.js'></script>
 		<script src='build/vendor/d3.min.js'></script>
@@ -9,10 +11,11 @@
 		<script src='build/dist/angular-d3.js'></script>
 		<script src='build/application.js'></script>
 	</head>
-	<body ng-controller='MainAppController'>
-		
+	<body ng-controller='MainAppController as vm'>
+		{{vm.data}}
 		<div chart-container data='vm.data'>
 			<vertical-bars></vertical-bars>
+			<horizontal-bars></horizontal-bars>
 		</div>
 
 	</body>

@@ -16,6 +16,10 @@
 			
 			link: function(scope, elem, attrs, controller) {
 				console.log('vertical bar');
+
+				
+				
+
 			}
 		};
 	}
