@@ -52,6 +52,13 @@ gulp.task('scripts',
 			.pipe(gulp.dest('build/'));
 	});
 
+gulp.task('css',
+	function() {
+		return gulp.src('src/css/**/*.css')
+			.pipe(concat('styles.css'))
+			.pipe(gulp.dest('build'));
+	});
+
 /**
  * Copy any vendor scripts to build/vendor
  */
@@ -72,6 +79,7 @@ gulp.task('default',
 gulp.task('watch',
 	function() {
 		gulp.watch('src/**/*.js', ['scripts']);
+		gulp.watch('src/css/**/*.css', ['css']);
 	});
 
 
